@@ -1,0 +1,143 @@
+@font-face {
+  font-family: speedeek;
+  src: url(../assets/font/Speedee_K_L.woff);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: speedeek;
+  src: url(../assets/font/Speedee_K_B.woff);
+}
+
+@font-face {
+  font-family: speedeek;
+  src: url(../assets/font/Speedee_K_R.woff);
+}
+
+:root {
+  font-size: 10px;
+}
+
+body {
+  font-family: speedeek;
+  font-weight: 700;
+}
+
+header {
+  border-color: #fff;
+}
+
+header .headerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 140px;
+  width: 1168px;
+  margin: 0 auto;
+}
+
+#gnbList .depth01 {
+  margin-right: 85px;
+  font-size: 2em;
+}
+
+#gnbList {
+  display: flex;
+}
+
+.utll {
+  display: flex;
+}
+
+.utll .utllList {
+  display: flex;
+}
+
+.utll .utllList li {
+  width: 80px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  font-size: 1.3rem;
+  border-radius: 48px;
+  color: #fff;
+}
+
+.utll .utllList li:nth-child(1) {
+  background-color: #bd0007;
+}
+
+.utll .utllList li:nth-child(2) {
+  margin: 0 4px;
+  background-color: #d87e00;
+}
+
+.utll .utllList li:nth-child(3) {
+  margin: 0 4px;
+  background-color: #264a36;
+}
+
+.utll .btnSearch {
+  margin-left: 26px;
+  cursor: pointer; /*마우스가 호버됐을 때 손가락 모양*/
+}
+
+#banner .slideList li img {
+  width: 100%;
+}
+
+#banner {
+  position: relative;
+}
+
+#banner .btnSlide .btn {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top: 50%;
+
+  transform: translateY(-50%);
+  background: url(../assets/imgs/bg_swiper_new.png) 0 0 no-repeat;
+  cursor: pointer;
+}
+
+#banner .btnSlide .btn.prev {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+#banner .btnSlide .btn.next {
+  right: 0;
+  background-position-y: -90px;
+
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+#banner .controls {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#banner .controls .btnPlay {
+  width: 36px;
+  height: 36px;
+  background-color: black;
+  background: url(../assets/imgs/bg_swiper_new.png) -92px 0;
+  margin-right: 20px;
+  cursor: pointer;
+}
+#banner .controls .btnPlay:hover {
+  background-position-y: -36px;
+}
+
+#banner .controls .statusBar {
+  width: 200px;
+  height: 6px;
+  background-color: #fff;
+  border-radius: 5px;
+}
