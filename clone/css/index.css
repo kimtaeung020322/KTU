@@ -96,7 +96,7 @@ header .headerWrapper {
 
 #gnbList .depth01 > ul li a:hover {
   color: #000;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid black;  
 }
 
 #gnbList .depth01 > ul li {
