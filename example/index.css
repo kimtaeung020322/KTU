@@ -23,13 +23,13 @@ li {
 
 h1 {
   position: absolute;
-  left: 20px;
   height: 40px;
   line-height: 40px;
+  left: 20px;
 }
 
 #gnbList {
-  width: 300px;
+  width: 240px;
   margin: 0 auto;
 }
 
@@ -43,7 +43,7 @@ h1 {
 
 #gnbList li a {
   display: block;
-  width: 100px;
+  width: 80px;
   height: 40px;
   line-height: 40px;
   text-align: center;
@@ -58,7 +58,6 @@ main .imgList {
   width: 320px;
   margin: 0 auto;
 }
-
 main .imgList li {
   float: left;
 }
@@ -73,16 +72,16 @@ main .imgList li a {
   transition: 0.4s;
 }
 
-main.imgList li:nth-child(1) a {
+main .imgList li:nth-child(1) a {
   background-image: url("./assets/dog_bg.jpg");
 }
 
-main.imgList li:nth-child(2) a {
-  background-image: url("./assets/dog_bg.jpg");
+main .imgList li:nth-child(2) a {
+  background-image: url("./assets/dog_bg02.jpg");
 }
 
-main.imgList li:nth-child(3) a {
-  background-image: url("./assets/dog_bg.jpg");
+main .imgList li:nth-child(3) a {
+  background-image: url("./assets/dog_bg03.jpg");
 }
 
 main .imgList li a:hover {
