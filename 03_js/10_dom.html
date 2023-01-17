@@ -56,6 +56,7 @@
         <button data-color="blue">파랑</button>
         <button data-color="yellow">노랑</button>
         <button data-color="black">검정</button>
+        <input type="text" />
       </div>
     </div>
 
@@ -214,7 +215,7 @@
       btnList.forEach((btn, idx) => {
         btn.addEventListener("click", function (e) {
           //   alert("버튼 클릭");
-          item.style.backgroundColor = btn.dataset.color;
+          //   item.style.backgroundColor = btn.dataset.color;
           item.style.width = btn.dataset.boxWidth;
         });
       });
@@ -229,12 +230,20 @@
         console.log("e. currenttarget : " + e.currenttarget);
 
         if (e.target.matches(".changeBox"))
-          item.style.backgroundColor = e.target.dataset.color;
-        item.style.width = e.target.dataset.boxWidth;
+          //   item.style.backgroundColor = e.target.dataset.color;
+          item.style.width = e.target.dataset.boxWidth;
 
         // 이벤트가 발생한 실제 타켓과 바인딩된 타켓이 일치할 때만 실행
         if (e.target === e.currentTarget) {
           alert("체인지 박스 클릭");
+        }
+      });
+      // input값에 색상 입력 후 엔터 누르면 색상 변경
+      let changeInput = document.querySelector(".changeBox input");
+
+      changeInput.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          item.style.backgroundColor = e.target.value;
         }
       });
     </script>
