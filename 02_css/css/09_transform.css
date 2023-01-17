@@ -63,7 +63,11 @@
 }
 
 .container.scale .box.x {
+<<<<<<< HEAD
   transform-origin: left;
+=======
+  transform-origin: center;
+>>>>>>> a00fb4d614c7f88047b59421285d704c829a7514
 }
 .container.scale .box.x:hover {
   transform: scaleX(110%);
