@@ -2,32 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
-    <title>Document</title>
-    <link rel="stylesheet" href="test.css" />
+    <link rel="stylesheet" href="./test.css" />
+    <title>KTU</title>
   </head>
+
   <body>
-    <main>
-      <section id="banner">
-        <ul class="slideList">
-          <li>
-            <a
-              href="https://www.mcdonalds.co.kr/kor/promotion/detail.do?seq=406"
-              ><img
-                src="https://www.mcdonalds.co.kr/upload/main/banner/1672819447369.jpg"
-                alt="스누피 이벤트"
-            /></a>
-          </li>
-        </ul>
-        <div class="btnSlide">
-          <div class="prev btn"></div>
-          <div class="next btn"></div>
+    <h1>main Sweeper</h1>
+
+    <div id="beforeStart">
+      <h3>
+        가로와 세로는 5~30 사이의 숫자로, 지뢰 갯수는 (가로*세로)보다 작게
+        입력해주세요!
+      </h3>
+      <div class="inputRow">
+        <label for="width">가로 길이를 입력하세요</label>
+        <input id="width" />
+      </div>
+      <div class="inputRow">
+        <label for="height">세로 길이를 입력하세요</label>
+        <input id="height" />
+      </div>
+      <div class="inputRow">
+        <label for="numMine">지뢰 갯수를 설정하세요</label>
+        <input id="numMine" />
+      </div>
+      <button id="start">game start</button>
+    </div>
+    <h2 id="gameResult"></h2>
+    <div id="gameContainer">
+      <div id="inGame" class="hidden">
+        <div class="aboutGame">
+          <div class="block flagged"></div>
+          <div id="flagRemain"></div>
         </div>
-        <div class="controls">
-          <div class="btnPlay"></div>
-          <div class="statusBar"></div>
-        </div>
-      </section>
-    </main>
+        <button id="restart" class="aboutGame">Restart?</button>
+        <div class="aboutGame">Time</div>
+        <div id="timer">0</div>
+      </div>
+    </div>
+    <div id="gameBoard"></div>
   </body>
+  <script>
+    sr;
+  </script>
 </html>
