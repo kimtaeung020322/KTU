@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>TODOS</title>
+  </head>
+  <body>
+    <h1>TODOS</h1>
+    <div class="todoContainer">
+      <div class="inputBox">
+        <form action="">
+          <input type="text" />
+          <button class="btnSubmit">등록</button>
+        </form>
+      </div>
+      <ul>
+        <li>HTML 배우기</li>
+      </ul>
+    </div>
+
+    <script>
+      /* 
+            1. 등록버튼 클릭시 input의 값을 읽어온다.
+            2. ul태그에 input 값을 포함한 li 태그를 나타낸다.
+            3. input 내용을 비우고, 포커스를 input 태그로 이동 시킨다.
+        */
+      let btnSubmit = document.querySelector(".btnSubmit");
+
+      let inputTodo = document.querySelector(".inputBox input");
+      let todoList = document.querySelector(".todoContainer ul");
+      let forElem = document.querySelector(".todoContainer from");
+
+      from.addEventListener("submit", function (e) {
+        e.preventDefault(); //요소의 기본 기능을 수행하지 않는다.
+        console.log(inputTodo.value);
+        todoList.innerHTML += `<li>${inputTodo.value}</li>`;
+        inputTodo.value = "";
+        inputTodo.focus();
+      });
+    </script>
+  </body>
+</html>
