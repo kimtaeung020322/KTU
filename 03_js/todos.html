@@ -14,30 +14,72 @@
           <input type="text" />
           <!--  -->
           <button class="btnSubmit">등록</button>
+          <button class="btnSave" type="button">저장</button>
         </form>
       </div>
       <ul>
-        <li>HTML 배우기</li>
+        <li>HTML 배우기<button>삭제</button></li>
       </ul>
     </div>
     <script>
-      /* 
+      /*
             1. 등록 버튼 클릭시 input의 값을 읽어온다.
             2. ul태그에 input 값을 포함한 li태그를 나타낸다.
             3. input 내용을 비우고, 포커스를 input 태그로 이동 시킨다.
         */
+      //로컬 스토리지 찾아봐서 없으면 빈 배열로 초기화
+      let currentId = todoArr.length === 0 ? 1 : todoArr[todoArr.length - 1].id; // 저장된 데이터의 마지막 요소
+      let todoArr = JSON.parse(localStorage.getItem("todos")) || [];
+
       let btnSubmit = document.querySelector(".btnSubmit");
       let inputTodo = document.querySelector(".inputBox input");
       let todoList = document.querySelector(".todoContainer ul");
       let formElem = document.querySelector(".todoContainer form");
 
+      todoArr.forEach((todo) => {
+        render(todo.id, todo.text);
+      });
+
       formElem.addEventListener("submit", function (e) {
+        if (inputTodo.value === "") {
+          //빈문자를 입력시 경고 창 출력 및 input으로 포커스 이동
+          alert("문자를 입력해주세요.");
+          inputTodo.focus();
+          return;
+        }
+        let nextId = ++currentId;
         e.preventDefault(); // 요소의 기본 기능을 수행하지 않는다.
+        todoArr.push({ id: nextid, text: inputTodo.value });
+        render(nextId, inputTodo.value);
+
+        save();
+      });
+      // todoArr의 값을 통해 화면에 렌더딩
+      function render(id, text) {
         console.log(inputTodo.value);
-        todoList.innerHTML += `<li>${inputTodo.value}</li>`;
+        todoList.innerHTML += `<li>${text}<button data-todo-id=${id}>삭제</button></li>`;
         inputTodo.value = "";
         inputTodo.focus();
+      }
+
+      // 이벤트 위임을 통한 삭제 기능 구현
+      todoList.addEventListener("click", function (e) {
+        //e.target(이벤트가 실제로 발생한 요소)가 삭제버튼 맞는지 확인
+        if (e.target.matches(".todoContainer ul li button")) {
+          //삭제 버튼의 부모 노드(parentNode)인 li태그를 삭제
+          todoArr = todoArr.filter((todo) => {
+            return todo.id !== parseInt(e.target.dataset.todoId);
+          });
+          e.target.parentNode.remove();
+        }
       });
+
+      //브라우저 창 종료 이벤트
+      window.addEventListener("beforeunload", save);
+
+      function save() {
+        localStorage.setItem("todos", JSON.stringify(todoArr));
+      }
     </script>
   </body>
 </html>
