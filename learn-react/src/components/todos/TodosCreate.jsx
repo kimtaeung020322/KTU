@@ -26,7 +26,6 @@ function TodosCreate({ dispatch }) {
       <form onSubmit={handleCreate}>
         <input type="text" onChange={handleInput} ref={inputRef} value={text} />
         <button>등록</button>
-        <button>삭제</button>
       </form>
     </div>
   );
