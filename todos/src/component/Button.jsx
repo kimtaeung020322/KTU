@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, { css } from "styled-components";
 
 function Button({ text, bgColor, big }) {
   return (
@@ -11,6 +11,7 @@ function Button({ text, bgColor, big }) {
 const Container = styled.div`
   width: 100px;
   padding: 5px 0;
+
   background-color: ${({ bgColor }) => bgColor || "black"};
 
   color: #fff;
@@ -21,7 +22,7 @@ const Container = styled.div`
     margin-top: 5px;
   }
 
-  //   css : 여러개의 속성을 한번에 덮어씌울 때 사용한다.
+  // css : 여러개의 속성을 한번에 덮어씌울 때 사용한다.
 
   ${({ big }) =>
     big &&
