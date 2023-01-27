@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { theme } from "../../style";
 function TodoInput() {
   return (
     <Container>
@@ -36,12 +36,12 @@ const Button = styled.button`
 
   cursor: pointer;
 
-  &:hover{
-    background-color: @{({theme})=> theme.colors.hover_color};
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.hover_color};
   }
 
-  &:active{
-    background-color: @{({theme})=> theme.colors.active_color};
+  &:active {
+    background-color: ${({ theme }) => theme.colors.active_color};
   }
 `;
 

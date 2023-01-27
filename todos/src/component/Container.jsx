@@ -31,8 +31,8 @@ const Box = styled.div`
   animation: ${fandIn} 1s 2;
   color: ${({ theme }) => theme.colors.main_color};
 
-  &:active{
-    color : @{({theme})=> theme.colors.active_color}
+  &:active {
+    color: ${({ theme }) => theme.colors.active_color};
   }
 
   @media (max-width: 500px) {
