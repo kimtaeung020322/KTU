@@ -1,10 +1,22 @@
 import styled from "styled-components";
 
-function TodoHeader() {
+function TodoHeader({ todos }) {
+  const dateStr = new Date().toLocaleDateString("ko-KR", {
+    dateStyle: "full",
+  });
+
+  const doneCount = todos.filter((todo) => todo.done).length;
+
+  const percentage = (doneCount / todos.length) * 100;
+
+  console.log(dateStr);
   return (
     <Container>
-      <DateText>2023년 1월 27일</DateText>
-      <CountText>완료: 0/4</CountText>
+      <DateText>{dateStr}</DateText>
+      <CountText>
+        완료: {doneCount}/{todos.length}
+      </CountText>
+      <PercentageBar percentage={percentage} />
     </Container>
   );
 }
@@ -14,7 +26,7 @@ const Container = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.colors.bd_color};
 `;
 const DateText = styled.p`
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
 `;
 
@@ -23,4 +35,20 @@ const CountText = styled.p`
   color: #bbb;
 `;
 
+const PercentageBar = styled.div`
+  height: 15px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 100%;
+    transform-origin: left;
+    transform: scaleX(${({ percentage }) => percentage}%);
+    transition: transform 0.4s;
+    background-color: ${({ theme }) => theme.colors.main_color};
+  }
+`;
 export default TodoHeader;
