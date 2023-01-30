@@ -1,9 +1,15 @@
 import styled from "styled-components";
+import TodtItem from "./TodtItem";
 
 function TodoBody() {
   return (
     <Container>
-      <ul></ul>
+      <ul>
+        <TodtItem />
+        <TodtItem />
+        <TodtItem />
+        <TodtItem />
+      </ul>
     </Container>
   );
 }

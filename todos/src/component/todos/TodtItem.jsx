@@ -6,6 +6,6 @@ function TodtItem() {
 
 const Container = styled.li`
   padding: 5px 10px;
-  border-bottom: 1px solid #bbb;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.bd_color};
 `;
 export default TodtItem;
