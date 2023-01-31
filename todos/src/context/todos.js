@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer, useState } from "react";
+import { createContext, useContext, useReducer } from "react";
 
 // createContext(기본값) : 컨텍스트를 만든다
 //  => Provider 밖에서 useContext를 사용하면 반환되는 값
