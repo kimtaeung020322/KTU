@@ -31,7 +31,7 @@ function App() {
       done: false,
     });
 
-    // 등록에 성송하면 데이터 다시 받아오기
+    // 등록에 성공하면 데이터 다시 받아오기
     if (result.status === 201) alert("할일이 등록되었습니다.");
     fetchData();
   };
