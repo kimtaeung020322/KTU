@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import { AiOutlineCheckCircle, AiFillCheckCircle } from "react-icons/ai";
 import { BsFillTrashFill } from "react-icons/bs";
+import { useTodoDispatch } from "../../context/todos";
 
-function TodtItem({ todo, dispatch }) {
+function TodtItem({ todo }) {
+  const dispatch = useTodoDispatch();
+
   const handleToggle = () => {
     dispatch({ type: "TOGGLE_TODO", id: todo.id });
   };
