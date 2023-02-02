@@ -1,26 +1,26 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 import { tmdbAxios } from "../../api/tmdbAxios";
 import ContentItem from "./ContentItem";
 import TitleBox from "./TitleBox";
 
-function ContentList({ title }) {
+function ContentList({ title, filter }) {
   const [state, setState] = useState(null);
-  const fetchData = async () => {
-    let { data } = await tmdbAxios.get("/trending/movie/day");
+  const fetchData = useCallback(async (url) => {
+    let { data } = await tmdbAxios.get(url);
     setState(data.results);
-  };
-
-  useEffect(() => {
-    fetchData();
   }, []);
+  useEffect(() => {
+    fetchData(filter[0].url);
+  }, [filter, fetchData]);
 
   console.log(state);
-  if (!state) return <div>로딩중...</div>;
+
+  if (!state) return <div>로딩 중...</div>;
 
   return (
     <Containset>
-      <TitleBox title={title} />
+      <TitleBox title={title} filter={filter} fetchData={fetchData} />
       <ItemList>
         {state.map((item) => (
           <ContentItem key={item.id} item={item} />
