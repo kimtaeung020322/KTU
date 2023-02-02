@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-function App() {
+// src/component/practice-api/Todos.jsx
+function Todos() {
   const [todos, setTodos] = useState(null);
   const [text, setText] = useState("");
 
@@ -21,7 +22,7 @@ function App() {
   };
 
   useEffect(() => {
-    //화면에 나타나자마 한번만 실행
+    // 화면에 나타나자마자 한번만 실행.
     fetchData();
   }, []);
 
@@ -32,6 +33,8 @@ function App() {
     });
 
     // 등록에 성공하면 데이터 다시 받아오기
+    // if(res.)
+    console.log(result);
     if (result.status === 201) alert("할일이 등록되었습니다.");
     fetchData();
   };
@@ -40,6 +43,7 @@ function App() {
     await axios.patch("http://localhost:5000/todos/" + id, {
       done,
     });
+
     fetchData();
   };
 
@@ -77,4 +81,4 @@ function App() {
   );
 }
 
-export default App;
+export default Todos;
