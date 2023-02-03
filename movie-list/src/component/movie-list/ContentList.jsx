@@ -14,8 +14,6 @@ function ContentList({ title, filter }) {
     fetchData(filter[0].url);
   }, [filter, fetchData]);
 
-  console.log(state);
-
   if (!state) return <div>로딩 중...</div>;
 
   return (
