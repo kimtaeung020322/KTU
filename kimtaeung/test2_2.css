@@ -1,0 +1,13 @@
+body ul {
+  list-style: none;
+}
+
+.info li {
+  margin-top: 5px;
+  display: flex;
+}
+
+.info li label {
+  text-align: center;
+  width: 50px;
+}

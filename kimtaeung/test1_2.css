@@ -1,0 +1,14 @@
+body table {
+  /* display: flex; */
+  width: 600px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+body table tr th {
+  border: 1px solid black;
+  width: 150px;
+}
+body table tr td {
+  border: 1px solid black;
+}

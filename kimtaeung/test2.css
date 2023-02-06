@@ -1,0 +1,13 @@
+.List {
+  list-style: none;
+}
+
+.List li {
+  display: flex;
+
+  padding: 15px;
+}
+
+.List li label {
+  width: 100px;
+}
