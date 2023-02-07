@@ -1,0 +1,14 @@
+ul li {
+  border: 1px solid black;
+  float: left;
+  list-style: none;
+  width: 100px;
+  text-align: center;
+}
+
+ul li:hover {
+  background-color: black;
+  color: white;
+  transition-timing-function: ease-in;
+  transition-delay: 0.5s;
+}

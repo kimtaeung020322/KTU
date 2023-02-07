@@ -1,0 +1,10 @@
+.info {
+  font-weight: bold;
+  color: #ad3000;
+}
+
+body ul {
+  list-style: none;
+
+  line-height: 200%;
+}

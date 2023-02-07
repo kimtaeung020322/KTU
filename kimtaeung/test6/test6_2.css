@@ -1,0 +1,17 @@
+img {
+  border: 1px solid black;
+  border-radius: 50%;
+  animation: hguore 2.5s infinite;
+}
+
+@keyframes hguore {
+  form {
+    transform: perspective(10px) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(130px) rotateY(-180deg);
+  }
+  to {
+    transform: perspective(130px) rotateY(-360deg);
+  }
+}
