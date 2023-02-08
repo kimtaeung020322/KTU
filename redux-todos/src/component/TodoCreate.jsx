@@ -1,13 +1,17 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { todoReducerCreate } from "../reducer/todos02";
+import { postTodo } from "../api/todos";
+import { fetchData } from "../reducer/todos02";
 
 function TodoCreate() {
-  const [text, setText] = useState("");
-  const dipatch = useDispatch();
-  const handleSubmit = (e) => {
+  const [text, setText] = useState("테스트");
+  const dispatch = useDispatch();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dipatch(todoReducerCreate(text));
+
+    await postTodo(text);
+    dispatch(fetchData());
   };
 
   return (
