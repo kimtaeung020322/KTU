@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { todoReducerRemove, todoReducerToggle } from "../reducer/todos";
+import { todoReducerRemove, todoReducerToggel } from "../reducer/todos02";
 
 function TodoItem({ todo }) {
   const { id, text, done } = todo;
@@ -7,7 +7,7 @@ function TodoItem({ todo }) {
 
   return (
     <li style={{ textDecoration: done && "line-through" }}>
-      <span onClick={() => dispatch(todoReducerToggle(id))}>{text}</span>
+      <span onClick={() => dispatch(todoReducerToggel(id))}>{text}</span>
       <button onClick={() => dispatch(todoReducerRemove(id))}>삭제</button>
     </li>
   );

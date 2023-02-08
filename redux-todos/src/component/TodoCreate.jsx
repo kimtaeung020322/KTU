@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { todoReducerCreate } from "../reducer/todos";
+import { todoReducerCreate } from "../reducer/todos02";
 
 function TodoCreate() {
   const [text, setText] = useState("");

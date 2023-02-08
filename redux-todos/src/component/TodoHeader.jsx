@@ -7,7 +7,6 @@ function TodoHeader() {
   const undoneCount = todos.filter((todo) => !todo.done).length;
 
   // const totalCount = useSelector((state) => getTotaCount());
-  parse
 
   return (
     <div>

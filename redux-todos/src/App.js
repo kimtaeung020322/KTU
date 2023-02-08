@@ -1,4 +1,4 @@
-import Todos from "./component/./Todos";
+import Todos from "./component/Todos";
 
 function App() {
   return (
