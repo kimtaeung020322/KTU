@@ -10,9 +10,11 @@ if (token) {
   authAxios.defaults.headers.Authorization = `Bearer ${token}`;
 }
 
-export const signUpUser = async (from) => {
+// src/api/auth.js
+export const signUpUser = async (form) => {
   try {
-    const { data } = await authAxios.post("/users", from);
+    const { data } = await authAxios.post("users", form);
+
     return data;
   } catch (e) {
     alert("회원가입에 실패했습니다.");
@@ -21,7 +23,8 @@ export const signUpUser = async (from) => {
 
 export const signIn = async (form) => {
   try {
-    const { data } = await authAxios.post("/users/signin", form);
+    const { data } = await authAxios.post("users/signin", form);
+
     const { token } = data;
 
     localStorage.setItem("access-token", token);
@@ -33,8 +36,9 @@ export const signIn = async (form) => {
     alert("로그인에 실패했습니다.");
   }
 };
+
 export const getCurrentUser = async () => {
-  let { data } = await authAxios.get("/users/curremt");
+  let { data } = await authAxios.get("/users/current");
 
   console.log(data);
 };

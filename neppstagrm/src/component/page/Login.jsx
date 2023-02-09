@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import LoginForm from "../login/LoginForm";
 
+// src/component/page/Login.jsx
 function Login() {
   return (
     <Container>
@@ -8,6 +9,7 @@ function Login() {
     </Container>
   );
 }
+
 const Container = styled.div`
   display: flex;
   justify-content: center;

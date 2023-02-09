@@ -1,10 +1,11 @@
 import styled from "styled-components";
-import SignInUpFrom from "../login/SignInUpFrom";
+import SignUpForm from "../login/SignUpForm";
 
+// src/component/page/SignUp.jsx
 function SignUp() {
   return (
     <Container>
-      <SignInUpFrom />
+      <SignUpForm />
     </Container>
   );
 }

@@ -11,8 +11,9 @@ function InputBox({ children, hide, placeholder }) {
 
 const Container = styled.div`
   width: 200px;
-  border: 1px solid ${({ theme }) => theme.colors.db_color};
+  border: 1px solid ${({ theme }) => theme.colors.bd_color};
   position: relative;
+
   height: 25px;
 
   input {
@@ -34,7 +35,7 @@ const Container = styled.div`
 
 const Placeholder = styled.div`
   color: #aaa;
-  font-size: 0.8rem;
+  user-select: none;
   padding: 0 5px;
 `;
 

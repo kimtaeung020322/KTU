@@ -1,37 +1,42 @@
 import { useState } from "react";
 import styled from "styled-components";
-import InputBox from "./InputBox";
 import { AiOutlineSearch, AiOutlineUser, AiOutlineHome } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import Input from "./Input";
 
 function Header() {
-  const [input, setinput] = useState("");
-
+  const [input, setInput] = useState("");
   return (
     <Container>
       <Wrapper>
         <h1>Neppstagram</h1>
-        <InputBox hide={input != ""}>
-          <input type="text" onChange={(e) => setinput(e.target.value)} />
-        </InputBox>
-
+        <Input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder={
+            <>
+              <AiOutlineSearch />
+              검색
+            </>
+          }
+        />
         <Gnb>
           <GnbList>
-            <GnbItem>
+            <li>
               <Link to="home">
                 <AiOutlineHome />
               </Link>
-            </GnbItem>
-            <GnbItem>
+            </li>
+            <li>
               <Link to="search">
                 <AiOutlineSearch />
               </Link>
-            </GnbItem>
-            <GnbItem>
+            </li>
+            <li>
               <Link to="profile">
                 <AiOutlineUser />
               </Link>
-            </GnbItem>
+            </li>
           </GnbList>
         </Gnb>
       </Wrapper>
@@ -41,7 +46,7 @@ function Header() {
 
 const Container = styled.header`
   background-color: #fff;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.bd_color};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.bd_Color};
   padding: 10px 0;
 `;
 
@@ -59,7 +64,5 @@ const GnbList = styled.ul`
   display: flex;
   gap: 10px;
 `;
-
-const GnbItem = styled.li``;
 
 export default Header;
