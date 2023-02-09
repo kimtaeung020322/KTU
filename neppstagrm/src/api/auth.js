@@ -23,7 +23,7 @@ export const signUpUser = async (form) => {
 
 export const signIn = async (form) => {
   try {
-    const { data } = await authAxios.post("users/signin", form);
+    const { data } = await authAxios.post("/users/signin", form);
 
     const { token } = data;
 
