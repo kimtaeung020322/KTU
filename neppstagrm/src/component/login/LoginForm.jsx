@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, redirect, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { signIn } from "../../api/auth";
+import { getCurrentUser, signIn } from "../../api/auth";
 import Button from "../common/Button";
 import Input from "../common/Input";
 
@@ -33,8 +33,8 @@ function LoginForm() {
 
   return (
     <Container>
+      <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <h2>Login</h2>
         <Input
           type="email"
           value={inputs.email}
@@ -52,7 +52,7 @@ function LoginForm() {
         <BtnBox>
           <Button>Login</Button>
           <Button type="button" onClick={() => navigate("/signup")}>
-            SingUp
+            Signup
           </Button>
         </BtnBox>
       </form>

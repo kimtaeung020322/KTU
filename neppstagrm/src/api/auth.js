@@ -6,6 +6,8 @@ const authAxios = axios.create({
 
 const token = localStorage.getItem("access-token");
 
+console.log(token);
+
 if (token) {
   authAxios.defaults.headers.Authorization = `Bearer ${token}`;
 }
@@ -23,7 +25,7 @@ export const signUpUser = async (form) => {
 
 export const signIn = async (form) => {
   try {
-    const { data } = await authAxios.post("/users/signin", form);
+    const { data } = await authAxios.post("users/signin", form);
 
     const { token } = data;
 
@@ -40,5 +42,5 @@ export const signIn = async (form) => {
 export const getCurrentUser = async () => {
   let { data } = await authAxios.get("/users/current");
 
-  console.log(data);
+  return data;
 };

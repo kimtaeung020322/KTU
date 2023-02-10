@@ -1,12 +1,13 @@
-import { createAsyncThunk, createSlic } from "@reduxjs/toolkit";
+// src/redux/user.js
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getCurrentUser } from "../api/auth";
 
-const fetchUser = createAsyncThunk("user/fetchUser", getCurrentUser);
+export const fetchUser = createAsyncThunk("user/fetchUser", getCurrentUser);
 
-const userSlice = createSlic({
+const userSlice = createSlice({
   name: "user",
   initialState: {
-    isLoding: true,
+    isLoading: true,
     data: null,
     isError: false,
   },
@@ -14,7 +15,7 @@ const userSlice = createSlic({
     builder.addCase(fetchUser.fulfilled, (state, action) => {
       state.data = action.payload;
       state.isError = false;
-      state.isLoding = false;
+      state.isLoading = false;
     });
   },
 });

@@ -3,13 +3,13 @@ import ProfileBox from "../profile/ProfileBox";
 
 function Profile() {
   return (
-    <Cotainer>
+    <Container>
       <ProfileBox />
-    </Cotainer>
+    </Container>
   );
 }
 
-const Cotainer = styled.div`
+const Container = styled.div`
   width: 100%;
 `;
 
