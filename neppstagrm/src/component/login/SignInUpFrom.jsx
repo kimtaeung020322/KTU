@@ -56,8 +56,14 @@ function SignInUpFrom() {
           <input name="password" type="text" onChange={handleinput} />
         </InputBox>
         <ButBox>
-          <Button text="Login" />
-          <Button text="Cancel" bgColor="red" type="button" />
+          <Button>SignUp</Button>
+          <Button
+            type="button"
+            bgColor="red"
+            onClick={() => navigate("/login")}
+          >
+            Cancel
+          </Button>
         </ButBox>
       </form>
     </Container>

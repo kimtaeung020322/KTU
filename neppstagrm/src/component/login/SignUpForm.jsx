@@ -60,7 +60,7 @@ function SignUpForm() {
         />
         <BtnBox>
           <Button text="SignUp" />
-          <Button text="Cancel" bgColor="red" type="button" />
+          <Button bgColor="red" type="button" onClick={() => navigate("/")} />
         </BtnBox>
       </form>
     </Container>

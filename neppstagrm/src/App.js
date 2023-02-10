@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import styled, { ThemeProvider } from "styled-components";
+import { useNavigate } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
 import { getCurrentUser } from "./api/auth";
 import Header from "./component/common/Header";
 import { Router } from "./router";
@@ -7,39 +8,21 @@ import { theme } from "./styles";
 
 function App() {
   //  App이 마운트 되자마자 login 페이지 이동
-
+  const navigate = useNavigate();
   useEffect(() => {
-    getCurrentUser().then((data) => {
-      setUse(data);
+    getCurrentUser().then(() => {
+      navigate("/home");
     });
-  }, []);
+  }, [navigate]);
+
+  const user = useSelector((state) => state.user);
 
   return (
     <ThemeProvider theme={theme}>
-      <Container>
-        <Header />
-        <Wrapper>
-          <Router />
-        </Wrapper>
-      </Container>
+      <Header />
+      <Router />
     </ThemeProvider>
   );
 }
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  background: #eee;
-  width: 100vw;
-  min-height: 100vh;
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  width: 500px;
-  margin: 0 auto;
-  flex: 1;
-  background-color: #fff;
-`;
 
 export default App;
