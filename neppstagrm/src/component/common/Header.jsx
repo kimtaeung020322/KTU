@@ -1,6 +1,11 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { AiOutlineSearch, AiOutlineUser, AiOutlineHome } from "react-icons/ai";
+import {
+  AiOutlineSearch,
+  AiOutlineUser,
+  AiOutlineHome,
+  AiOutlineEdit,
+} from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Input from "./Input";
 
@@ -23,13 +28,18 @@ function Header() {
         <Gnb>
           <GnbList>
             <li>
-              <Link to="home">
+              <Link to="/post">
                 <AiOutlineHome />
               </Link>
             </li>
             <li>
               <Link to="search">
                 <AiOutlineSearch />
+              </Link>
+            </li>
+            <li>
+              <Link to="post/edit">
+                <AiOutlineEdit />
               </Link>
             </li>
             <li>
@@ -48,6 +58,11 @@ const Container = styled.header`
   background-color: #fff;
   border-bottom: 1px solid ${({ theme }) => theme.colors.bd_Color};
   padding: 10px 0;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 `;
 
 const Wrapper = styled.div`

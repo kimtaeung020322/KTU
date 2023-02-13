@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const authAxios = axios.create({
+export const authAxios = axios.create({
   baseURL: "http://101.101.218.43",
 });
 
@@ -41,6 +41,23 @@ export const signIn = async (form) => {
 
 export const getCurrentUser = async () => {
   let { data } = await authAxios.get("/users/current");
+
+  return data;
+};
+
+export const patchProfile = async (form) => {
+  let { data } = await authAxios.patch("/users/profile", form);
+
+  return data;
+};
+
+export const createPost = async (form) => {
+  let { data } = await authAxios.post("/posts", form);
+  return data;
+};
+
+export const getPostById = async (id) => {
+  let { data } = await authAxios.get("/posts/" + id);
 
   return data;
 };
