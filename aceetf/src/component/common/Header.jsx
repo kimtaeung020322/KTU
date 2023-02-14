@@ -47,16 +47,12 @@ function Header() {
 }
 
 const Popup = styled.div`
-  width: 100vw;
   height: 80px;
 `;
 
 const Img = styled.img`
   width: 100%;
   height: 100%;
-
-  margin: 0;
-  padding: 0;
 `;
 
 const Close = styled.button`
@@ -99,7 +95,7 @@ const TopMenu = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${({ color }) => color || "black"}; ;
+  color: ${({ color }) => color || "black"};
 `;
 
 const TotalMenu = styled.span`
