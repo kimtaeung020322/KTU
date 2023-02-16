@@ -2,6 +2,7 @@ import Header from "../common/Header";
 import styled from "styled-components";
 import BodyTop from "../common/BodyTop";
 import BodyBottom from "../common/BodyBottom";
+import Footer from "../common/Footer";
 
 function Home() {
   return (
@@ -9,6 +10,7 @@ function Home() {
       <Header />
       <BodyTop />
       <BodyBottom />
+      <Footer></Footer>
     </Container>
   );
 }

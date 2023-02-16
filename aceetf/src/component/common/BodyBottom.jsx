@@ -49,7 +49,6 @@ function BodyBottom() {
           </CategoryItem>
         </CategoryList>
       </Category>
-
       <Top3>
         <TopTitle>
           <Top3Text>유형별 수익률 TOP3</Top3Text>
@@ -104,6 +103,101 @@ function BodyBottom() {
           />
         </Chart>
       </Top3>
+      <AceInsight>ACE 인사이트</AceInsight>
+
+      <Vidio>
+        <VidioMovi
+          src="https://www.aceetf.co.kr/_next/image?url=https%3A%2F%2Fkiminveststorage.blob.core.windows.net%2Fkim-public%2Fv1%2F2023%2F02%2F1676426871610_b143ba8e-f190-4af3-a6f3-c9b125ed4675.jpg&w=1920&q=75"
+          alt="배너"
+        />
+        <PlayButton
+          src="https://www.aceetf.co.kr/_next/static/media/icon_play_wt.fa460d1b.svg"
+          alt="재생버튼"
+        />
+      </Vidio>
+
+      <NewsList>
+        <NewsItem>
+          <NewsInfo>ETF 뉴스</NewsInfo>
+          <NewsTitle>
+            금리 인하 시기 채권값 살펴보니...장기채 레버리지 담아볼까
+          </NewsTitle>
+          <NewsDate>매일경제 | 2023-02-09</NewsDate>
+        </NewsItem>
+        <NewsItem>
+          <NewsInfo>ETF 뉴스</NewsInfo>
+          <NewsTitle>
+            한투운용 "메리츠證서 베트남 ETF 거래하고 여행 가자"
+          </NewsTitle>
+          <NewsDate>서울경제 | 2023-02-07</NewsDate>
+        </NewsItem>
+        <NewsItem>
+          <NewsInfo>ETF 리서치</NewsInfo>
+          <NewsTitle>[한국투자증권]해외채권Weekly</NewsTitle>
+          <NewsDate>매일경제 | 2023-02-09</NewsDate>
+        </NewsItem>
+        <NewsItem></NewsItem>
+      </NewsList>
+
+      <ETFinfo>
+        <ETFtitleBar>
+          <ETFtitle>ETF 자료실</ETFtitle>
+          <Details
+            src="https://www.aceetf.co.kr/_next/static/media/icon_more_bk.f95fc64a.svg"
+            alt="더보기"
+          />
+        </ETFtitleBar>
+
+        <ETFlist>
+          <ETFitem>ACE 종합채권(AA-이상)KIS액티브</ETFitem>
+          <ETFitem>ACE 미국S&P500</ETFitem>
+          <ETFitem>ACE 미국나스닥100</ETFitem>
+        </ETFlist>
+      </ETFinfo>
+
+      <Question>
+        <QuestionInfo>
+          <ETFtitleBar>
+            <ETFtitle>공지사항</ETFtitle>
+            <Details
+              src="https://www.aceetf.co.kr/_next/static/media/icon_more_bk.f95fc64a.svg"
+              alt="더보기"
+            />
+          </ETFtitleBar>
+
+          <ETFlist>
+            <ETFitem>
+              ACE ETF 홈페이지 OPEN <ETFdate>2023-01-16</ETFdate>
+            </ETFitem>
+            <ETFitem>
+              신규상장기념 거래인증 인벤트 진행!(23.02.07 -23.02.20)
+              <ETFdate>2023-02-06</ETFdate>
+            </ETFitem>
+            <ETFitem>
+              ACE 미국나스닥100 <ETFdate>2023-01-27</ETFdate>
+            </ETFitem>
+          </ETFlist>
+        </QuestionInfo>
+
+        <QuestionInfo>
+          <ETFtitleBar>
+            <ETFtitle>FAQ</ETFtitle>
+            <Details
+              src="https://www.aceetf.co.kr/_next/static/media/icon_more_bk.f95fc64a.svg"
+              alt="더보기"
+            />
+          </ETFtitleBar>
+
+          <ETFlist>
+            <ETFitem>
+              (국가) 한국에 있는 ACE S&P 500 ETF와 미국에 있는 SPY ETF는 뭐가
+              다른가요?
+            </ETFitem>
+            <ETFitem>(증권사)ETF는 어느 증권사에서 살 수 있나요?</ETFitem>
+            <ETFitem>(세금) 국내 상장된 ETF 세금은 어떻게 되나요?</ETFitem>
+          </ETFlist>
+        </QuestionInfo>
+      </Question>
     </>
   );
 }
@@ -218,6 +312,127 @@ const ChartItemNum = styled.div`
 
 const Banner = styled.img`
   width: 100%;
+`;
+
+const AceInsight = styled.h2`
+  padding: 80px;
+
+  font-size: 3.5rem;
+  font-weight: 100;
+`;
+
+const PlayButton = styled.img`
+  background-color: rgba(0, 0, 0, 0.5);
+
+  border-radius: 50px;
+
+  position: absolute;
+
+  width: 5rem;
+  height: 5rem;
+
+  top: 45%;
+  left: 45%;
+`;
+
+const Vidio = styled.div`
+  display: flex;
+  position: relative;
+  width: 100%;
+`;
+
+const VidioMovi = styled.img`
+  width: 100%;
+`;
+
+const NewsList = styled.ul`
+  display: flex;
+  list-style: none;
+  width: 100%;
+  flex-wrap: wrap;
+`;
+
+const NewsItem = styled.li`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  border: 1px solid #999;
+  width: 50%;
+
+  padding: 32px;
+`;
+const NewsInfo = styled.div`
+  font-size: 0.8rem;
+  color: navy;
+  padding-bottom: 15px;
+`;
+
+const NewsDate = styled.div`
+  font-size: 0.8rem;
+`;
+const NewsTitle = styled.div`
+  font-size: 1rem;
+  font-weight: 700;
+
+  padding-bottom: 15px;
+`;
+
+const ETFinfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding: 50px 32px;
+  border: 1px solid #999;
+`;
+
+const ETFtitle = styled.h2`
+  font-size: 1.1rem;
+  font-weight: 700;
+`;
+const ETFlist = styled.ul`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 150px;
+  padding-top: 40px;
+  list-style: none;
+`;
+const ETFitem = styled.li`
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+`;
+
+const ETFdate = styled.div``;
+
+const Details = styled.img`
+  border: 2px solid #999;
+  width: 20px;
+  height: 20px;
+`;
+
+const ETFtitleBar = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Question = styled.div`
+  display: flex;
+  width: 100%;
+`;
+
+const QuestionInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding: 50px 32px;
+
+  border: 1px solid #999;
+  width: 50%;
 `;
 
 export default BodyBottom;
