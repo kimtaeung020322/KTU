@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-function body() {
+function BodyTop() {
   return (
     <Container>
       <Main>
@@ -60,13 +60,26 @@ function body() {
           </ButtonList>
         </SearchMenu>
       </Main>
+
+      <NoticeBar>
+        <Notice>
+          <NoticeInfo>공지사항</NoticeInfo>
+          <NoticePost>
+            신규 상장 거래 이벤트 진행! (23.02.07 ~ 23.02.20)
+          </NoticePost>
+        </Notice>
+
+        <PlayButton
+          src="https://www.aceetf.co.kr/_next/static/media/icon_play_wt.fa460d1b.svg"
+          alt="재생버튼"
+        />
+      </NoticeBar>
     </Container>
   );
 }
 
 const Container = styled.div`
   width: 100%;
-  height: 5000px;
 `;
 
 const Img = styled.img`
@@ -74,7 +87,6 @@ const Img = styled.img`
 `;
 
 const SearchMenu = styled.div`
-  border: 1px solid black;
   min-width: 800px;
   position: absolute;
 `;
@@ -102,6 +114,8 @@ const ButtonList = styled.ul`
     background-color: #fff;
 
     color: navy;
+
+    cursor: pointer;
   }
 `;
 const ButtonItem = styled.li`
@@ -133,6 +147,9 @@ const Input = styled.input`
   color: #fff;
   height: 50px;
   flex: 1;
+  border: none;
+  border-bottom: 1px solid #fff;
+  margin: 0 10px;
 `;
 
 const Main = styled.div`
@@ -145,8 +162,38 @@ const Icon = styled.button`
   background-color: rgba(0, 0, 0, 0);
   color: #fff;
   border: none;
-  padding: 5px;
   font-size: 0.8rem;
+  margin: 0 10px;
+  cursor: pointer;
 `;
 
-export default body;
+const Notice = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const PlayButton = styled.img`
+  justify-content: flex-end;
+`;
+
+const NoticeInfo = styled.div``;
+
+const NoticePost = styled.div`
+  flex: 1;
+  font-weight: 700;
+  margin: 0 50px;
+`;
+
+const NoticeBar = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 100%;
+  height: 56px;
+  border: 1px solid black;
+  background-color: rgb(82, 120, 174);
+`;
+
+export default BodyTop;

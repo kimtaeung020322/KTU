@@ -1,12 +1,14 @@
 import Header from "../common/Header";
-import Body from "../common/Body";
 import styled from "styled-components";
+import BodyTop from "../common/BodyTop";
+import BodyBottom from "../common/BodyBottom";
 
 function Home() {
   return (
     <Container>
       <Header />
-      <Body />
+      <BodyTop />
+      <BodyBottom />
     </Container>
   );
 }
