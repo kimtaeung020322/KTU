@@ -11,7 +11,7 @@ function Login() {
   if (user.isLoading) return;
 
   // user 데이터가 있을 때는 홈컴포넌트로 리다이텍트.
-  if (user.data) return <Navigate to="/home" />;
+  if (user.data) return <Navigate to="/main" />;
 
   return (
     <Container>

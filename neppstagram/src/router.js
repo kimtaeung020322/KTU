@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "./component/page/Home";
 import Login from "./component/page/Login";
 import Main from "./component/page/Main";
 import Post from "./component/page/Post";
@@ -14,7 +13,7 @@ export const Router = () => {
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="signup" element={<SignUp />} />
-      <Route path="/" element={<Main />}>
+      <Route path="/main" element={<Main />}>
         <Route path="profile" element={<Profile />} />
         <Route path="post/*" element={<Post />}>
           <Route path="" element={<PostList />} />
