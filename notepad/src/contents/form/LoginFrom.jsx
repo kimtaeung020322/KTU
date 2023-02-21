@@ -9,6 +9,7 @@ function LoginFrom() {
         <Input type="email" />
         <Input type="password" />
         <LoginButton>Login</LoginButton>
+        <SignUpButton>Sign up</SignUpButton>
       </LoginScreen>
     </Form>
   );
@@ -40,6 +41,8 @@ const Title = styled.h3`
   font-size: 2rem;
   display: flex;
   justify-content: center;
+
+  height: 25px;
 `;
 
 const Input = styled.input`
@@ -48,6 +51,11 @@ const Input = styled.input`
 `;
 
 const LoginButton = styled.button`
+  height: 50px;
+  margin-bottom: 5px;
+`;
+
+const SignUpButton = styled.button`
   height: 50px;
 `;
 
